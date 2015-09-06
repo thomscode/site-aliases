@@ -1,0 +1,23 @@
+#
+# Example Drush alias file for multiple sites.
+#
+# Each site may have multiple "environments"
+# such as "development", "test" and "production".
+# The top-level element names the environment.
+#
+# An environment named "common" will be unioned
+# with all other environments defined in the file.
+#
+# See "example.alias.yml" for a description of
+# the options that may appear in each site environment.
+#
+---
+sites:
+  site1:
+    dev:
+      root: /path/to/site1
+      uri: https://site1uri.org
+  site2:
+    dev:
+      root: /path/to/site2
+      uri: https://site2uri.org

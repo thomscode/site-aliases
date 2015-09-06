@@ -1,0 +1,53 @@
+#
+# Example Drush alias file for a single site 'example'.
+#
+# Each site may have multiple "environments"
+# such as "development", "test" and "production".
+# The top-level element names the environment.
+#
+# An environment named "common" will be unioned
+# with all other environments defined in the file.
+#
+# This file is equivalent to *.alias.drushrc.php,
+# except it allows for multiple environments for every
+# site.  Existing *.alias.drushrc.php files are
+# loaded with all options in "common".
+#
+---
+dev:
+  # Basic site identifiers appear at the top level
+  # of the environment section.
+  root: /path/to/site
+  uri: https://siteuri.org
+  host: localhost
+  user: NULL
+  # 'options' are passed in to any command that
+  # has an option with the given name, or for all
+  # commands for global options.
+  options:
+    verbose: TRUE
+  # 'metadata' is reserved for special uses; it
+  # is never passed on to remote commands, and
+  # never provided as a command option value.
+  # Top-level '#key' values from a *.alias.drushrc.php
+  # file are copied here.
+  metadata:
+    # Drush copies the name of the alias to the 'name' metadata item
+    name: @example.dev
+    # Drush writes the path to the alias file to the 'file' metadata item
+    file: /path/to/example.yml
+  # Command options are merged in with 'options' for
+  # any command that matches a command-option section
+  # with the same name.
+  command-options:
+    sql-sync:
+      no-cache: TRUE
+  shell-aliases:
+    login: 'uli "superuser" admin/index'
+prod:
+  root: /path/to/site
+  uri: https://siteuri.org
+  host: myisp.net
+  user: www-admin
+  paths:
+    drush-script: /path/to/drush/on/remote/system
