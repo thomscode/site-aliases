@@ -1,5 +1,5 @@
 {
-  "name": "drush/drush-aliases",
+  "name": "consolidation/site-aliases",
   "description": "Libraries for managing Drush aliases and contexts, used to manage and configure scripting options for local and remote sites.",
   "homepage": "http://www.drush.org",
   "license": "GPL-2.0+",
