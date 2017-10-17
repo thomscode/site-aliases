@@ -17,13 +17,9 @@
     "phpunit/phpunit": ">=3.5"
   },
   "autoload": {
-    "psr-0": {
-      "Drush":        "lib/"
-    }
-  },
-  "autoload-dev": {
-    "psr-0": {
-      "Unish":        "tests/"
+    "psr-4": {
+      "Drush\\SiteAlias\\": "src/",
+      "Unish\\": "tests/"
     }
   },
   "extra": {
